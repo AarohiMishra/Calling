@@ -1,7 +1,7 @@
 import 'package:calling/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:calling/widgets/app_bar.dart'; // Import AppBarPage
-import 'package:calling/widgets/tab_buttons.dart'; // Import TabButtonsPage
+import 'package:calling/widgets/app_bar.dart';
+import 'package:calling/widgets/tab_buttons.dart';
 
 class Contacts extends StatefulWidget {
   @override
