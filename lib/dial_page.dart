@@ -1,5 +1,4 @@
 import 'package:calling/widgets/app_bar.dart';
-import 'package:calling/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 
@@ -26,7 +25,7 @@ class _DialPageState extends State<DialPage> {
       dialedNumber += number;
       textController.text = dialedNumber;
     });
-    widget.onDialButtonPressed(dialedNumber); // Pass updated number back to parent widget
+    widget.onDialButtonPressed(dialedNumber);
   }
 
   void clearLastDigit() {
@@ -36,13 +35,13 @@ class _DialPageState extends State<DialPage> {
         textController.text = dialedNumber;
       }
     });
-    widget.onDialButtonPressed(dialedNumber); // Pass updated number back to parent widget
+    widget.onDialButtonPressed(dialedNumber);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarPage(),  // Use the custom AppBarPage
+      appBar: AppBarPage(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -63,7 +62,6 @@ class _DialPageState extends State<DialPage> {
             ),
           ),
           SizedBox(height: 20),
-          // Your dial pad buttons
           _buildDialPadRow(['1', '2', '3']),
           Divider(),
           _buildDialPadRow(['4', '5', '6']),
@@ -78,7 +76,7 @@ class _DialPageState extends State<DialPage> {
     );
   }
 
-  // Helper function to create rows for the dial pad
+
   Row _buildDialPadRow(List<String> buttons) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

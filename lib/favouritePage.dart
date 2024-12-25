@@ -9,9 +9,8 @@ class favourite extends StatefulWidget {
 }
 
 class _favouriteState extends State<favourite> {
-  int _currentIndex = 0; // Index for Bottom Navigation Bar
+  int _currentIndex = 0;
 
-  // Screens for Bottom Navigation
   final List<Widget> _pages = [
     Center(child: Text('Connects Page')),
     Center(child: Text('Dialpad Page')),
@@ -27,9 +26,9 @@ class _favouriteState extends State<favourite> {
         child: Column(
           children: [
             SizedBox(height: 10),
-            TabButtonsPage(),  // Removed the context parameter here
+            TabButtonsPage(),
             SizedBox(height: 300),
-            Center(child: Text('Favourite Page')) // Display current selected page
+            Center(child: Text('Favourite Page'))
           ],
         ),
       ),

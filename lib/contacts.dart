@@ -12,6 +12,28 @@ class _ContactsState extends State<Contacts> {
   int _currentIndex = 0; // To manage the bottom navigation bar index
   final ScrollController _scrollController = ScrollController();
 
+  final contacts = [
+    {'name': 'Adnya', 'type': 'Personal'},
+    {'name': 'Ajinkya', 'type': 'Business'},
+    {'name': 'Akansha', 'type': 'Personal'},
+    {'name': 'Akshita', 'type': 'Personal'},
+    {'name': 'Aishwarya', 'type': 'Personal'},
+    {'name': 'Alisha', 'type': 'Business'},
+    {'name': 'Bhavika', 'type': 'Business'},
+    {'name': 'Bhakti', 'type': 'Business'},
+    {'name': 'Bharti', 'type': 'Personal'},
+    {'name': 'Birla', 'type': 'Business'},
+    // Add dummy contacts for letters C to Z
+    ...List.generate(23, (i) {
+      final letter = String.fromCharCode('C'.codeUnitAt(0) + i);
+      return {
+        'name': '$letter Dummy',
+        'type': i % 2 == 0 ? 'Personal' : 'Business',
+      };
+    })
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,26 +65,6 @@ class _ContactsState extends State<Contacts> {
   }
 
   Widget _buildContactsList() {
-    final contacts = [
-      {'name': 'Adnya', 'type': 'Personal'},
-      {'name': 'Ajinkya', 'type': 'Business'},
-      {'name': 'Akansha', 'type': 'Personal'},
-      {'name': 'Akshita', 'type': 'Personal'},
-      {'name': 'Aishwarya', 'type': 'Personal'},
-      {'name': 'Alisha', 'type': 'Business'},
-      {'name': 'Bhavika', 'type': 'Business'},
-      {'name': 'Bhakti', 'type': 'Business'},
-      {'name': 'Bharti', 'type': 'Personal'},
-      {'name': 'Birla', 'type': 'Business'},
-      // Add dummy contacts for letters C to Z
-      ...List.generate(23, (i) {
-        final letter = String.fromCharCode('C'.codeUnitAt(0) + i);
-        return {
-          'name': '$letter Dummy',
-          'type': i % 2 == 0 ? 'Personal' : 'Business',
-        };
-      })
-    ];
 
     return ListView.builder(
       controller: _scrollController,
@@ -133,26 +135,6 @@ class _ContactsState extends State<Contacts> {
   }
 
   void _scrollToLetter(String letter) {
-    final contacts = [
-      {'name': 'Adnya', 'type': 'Personal'},
-      {'name': 'Ajinkya', 'type': 'Business'},
-      {'name': 'Akansha', 'type': 'Personal'},
-      {'name': 'Akshita', 'type': 'Personal'},
-      {'name': 'Aishwarya', 'type': 'Personal'},
-      {'name': 'Alisha', 'type': 'Business'},
-      {'name': 'Bhavika', 'type': 'Business'},
-      {'name': 'Bhakti', 'type': 'Business'},
-      {'name': 'Bharti', 'type': 'Personal'},
-      {'name': 'Birla', 'type': 'Business'},
-      // Add dummy contacts for letters C to Z
-      ...List.generate(23, (i) {
-        final letter = String.fromCharCode('C'.codeUnitAt(0) + i);
-        return {
-          'name': '$letter Dummy',
-          'type': i % 2 == 0 ? 'Personal' : 'Business',
-        };
-      })
-    ];
 
     final index = contacts.indexWhere((contact) => contact['name']![0] == letter);
     if (index != -1) {

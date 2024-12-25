@@ -38,7 +38,7 @@ class Profile extends StatelessWidget {
                         SizedBox(height: 40),
                         CircleAvatar(
                           radius: 70,
-                          backgroundImage: AssetImage('assets/profile_girl.png'), // Add your profile image path here
+                          backgroundImage: AssetImage('assets/profile_girl_1.png'), // Add your profile image path here
                         ),
                         SizedBox(height: 10),
                         Image(image: AssetImage('assets/logo_appbar.png'), height: 22,),

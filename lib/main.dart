@@ -1,4 +1,3 @@
-import 'package:calling/MyHomePage.dart';
 import 'package:calling/calls.dart';
 import 'package:calling/contacts.dart';
 import 'package:calling/message_screen.dart';
@@ -18,13 +17,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/splashScreen', // Correct route for splash screen
+      initialRoute: '/splashScreen',
       routes: {
-        '/splashScreen': (context) => splashScreen(), // Add splash screen route
+        '/splashScreen': (context) => splashScreen(),
         '/': (context) => Calls(),
         '/contacts': (context) => Contacts(),
         '/messages': (context) => MessagesScreen(),
-        '/profile': (context) => Profile(), // Ensure ProfileScreen is defined
+        '/profile': (context) => Profile(),
       },
     );
   }
