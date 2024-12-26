@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:calling/calls.dart';
 import 'package:calling/contacts.dart';
 import 'package:calling/favouritePage.dart';
-import 'package:flutter/material.dart';
-import 'package:calling/message_screen.dart'; // Import MessagesScreen
+import 'package:calling/message_screen.dart';
 
 class TabButtonsPage extends StatelessWidget {
   @override
@@ -20,21 +20,21 @@ class TabButtonsPage extends StatelessWidget {
           }),
           SizedBox(width: 10),
           _buildTabButton(context, 'Contacts', Icons.keyboard_arrow_down_outlined, () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => Contacts()),
             );
           }),
           SizedBox(width: 10),
           _buildTabButton(context, 'Messages', Icons.keyboard_arrow_down_outlined, () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => MessagesScreen()), // Navigate to MessageScreen
             );
           }),
           SizedBox(width: 10),
           _buildTabButton(context, 'Favorites', Icons.keyboard_arrow_down_outlined, () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => favourite()),
             );
@@ -92,7 +92,7 @@ class TabButtonsPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context);
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => MessagesScreen()),
                       );

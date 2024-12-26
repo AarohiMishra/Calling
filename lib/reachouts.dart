@@ -1,29 +1,29 @@
-import 'package:flutter/material.dart';
 import 'package:calling/widgets/app_bar.dart';
 import 'package:calling/widgets/bottom_navigation.dart';
 import 'package:calling/widgets/tab_buttons.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class favourite extends StatefulWidget {
+class Reachouts extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() => _favouriteState();
+  State<Reachouts> createState() => _ReachoutsState();
 }
 
-class _favouriteState extends State<favourite> {
-  int _currentIndex = 0;
+class _ReachoutsState extends State<Reachouts> {
+  int _currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBarPage(),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            TabButtonsPage(),
-            SizedBox(height: 300),
-            Center(child: Text('Favourite Page'))
-          ],
-        ),
+      body: Column(
+        children: [
+          SizedBox(height: 10),
+          TabButtonsPage(),
+          SizedBox(height: 270,),
+          Center(child: Text("Reachouts")),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBarPage(
         currentIndex: _currentIndex,

@@ -1,5 +1,7 @@
+import 'package:calling/connects.dart';
+import 'package:calling/dial.dart';
+import 'package:calling/reachouts.dart';
 import 'package:flutter/material.dart';
-import 'package:calling/dial_page.dart';
 import 'package:calling/profile.dart';
 
 class BottomNavigationBarPage extends StatelessWidget {
@@ -14,12 +16,20 @@ class BottomNavigationBarPage extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: (index) {
         onTabChange(index);
-        if (index == 1) {
+        if (index == 0) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Connects()),
+          );
+        } else if(index == 1){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DialPage(onDialButtonPressed: (String value) { })),
+            MaterialPageRoute(builder: (context) => Dial()),
           );
-        } else if (index == 3) {
+        }
+        else if(index == 2){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Reachouts()));
+        }else if (index == 3) {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => Profile()),

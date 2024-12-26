@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splashScreen',
       routes: {
         '/splashScreen': (context) => splashScreen(),
-        '/': (context) => Calls(),
+        '/calls': (context) => Calls(),
         '/contacts': (context) => Contacts(),
         '/messages': (context) => MessagesScreen(),
         '/profile': (context) => Profile(),

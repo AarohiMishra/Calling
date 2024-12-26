@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:calling/access_calls.dart';
-import 'package:flutter/material.dart';
 
 class splashScreen extends StatefulWidget{
   @override
@@ -26,4 +26,3 @@ class _splashScreenState extends State<splashScreen> {
     );
   }
 }
-//initState cannot be called in stateless widget

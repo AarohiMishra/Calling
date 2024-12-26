@@ -9,9 +9,8 @@ class Contacts extends StatefulWidget {
 }
 
 class _ContactsState extends State<Contacts> {
-  int _currentIndex = 0; // To manage the bottom navigation bar index
+  int _currentIndex = 0;
   final ScrollController _scrollController = ScrollController();
-
   final contacts = [
     {'name': 'Adnya', 'type': 'Personal'},
     {'name': 'Ajinkya', 'type': 'Business'},
@@ -23,8 +22,7 @@ class _ContactsState extends State<Contacts> {
     {'name': 'Bhakti', 'type': 'Business'},
     {'name': 'Bharti', 'type': 'Personal'},
     {'name': 'Birla', 'type': 'Business'},
-    // Add dummy contacts for letters C to Z
-    ...List.generate(23, (i) {
+    ...List.generate(24, (i) {
       final letter = String.fromCharCode('C'.codeUnitAt(0) + i);
       return {
         'name': '$letter Dummy',
@@ -37,10 +35,12 @@ class _ContactsState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarPage(), // Use AppBarPage here
+      appBar: AppBarPage(),
       body: Column(
         children: [
-          TabButtonsPage(), // Ensure TabButtonsPage appears just below the app bar
+          SizedBox(height: 10,),
+          TabButtonsPage(),
+          SizedBox(height: 10,),
           Expanded(
             child: Row(
               children: [
@@ -93,9 +93,7 @@ class _ContactsState extends State<Contacts> {
               ),
             ListTile(
               leading: CircleAvatar(
-                backgroundColor: contact['type'] == 'Personal'
-                    ? Colors.blue.shade100
-                    : Colors.green.shade100,
+                backgroundColor: contact['type'] == 'Personal' ? Colors.blue.shade100 : Colors.green.shade100,
                 child: Icon(
                   contact['type'] == 'Personal' ? Icons.person : Icons.business,
                   color: contact['type'] == 'Personal' ? Colors.blue.shade800 : Colors.green.shade800,
@@ -112,7 +110,7 @@ class _ContactsState extends State<Contacts> {
 
   Widget _buildAlphabetStrip() {
     return Container(
-      width: 40,
+      width: 35,
       color: Colors.grey.shade200,
       child: ListView.builder(
         itemCount: 26,
@@ -139,8 +137,8 @@ class _ContactsState extends State<Contacts> {
     final index = contacts.indexWhere((contact) => contact['name']![0] == letter);
     if (index != -1) {
       _scrollController.animateTo(
-        index * 72.0, // Approximate height of a contact list item
-        duration: Duration(milliseconds: 300),
+        index * 72.0,
+        duration: Duration(milliseconds: 200),
         curve: Curves.easeInOut,
       );
     }

@@ -1,20 +1,19 @@
-
 import 'package:flutter/material.dart';
 
 class CallLogTile extends StatelessWidget {
   final String name;
   final String type;
   final IconData icon;
-  final String time;
   final String callType;
+  final String time;
   final bool isSpam;
 
   CallLogTile({
     required this.name,
     required this.type,
     required this.icon,
-    required this.time,
     required this.callType,
+    required this.time,
     required this.isSpam,
   });
 

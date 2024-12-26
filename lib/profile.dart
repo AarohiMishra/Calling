@@ -146,19 +146,15 @@ class ActionButton extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 10,),
+                SizedBox(height: 15,),
                 Icon(icon, color: Colors.grey.shade600, size: 28),
                 SizedBox(height: 8),
-                Text(
-                  label,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
               ],
             ),
           ),
-
         ),
-
       ],
     );
   }

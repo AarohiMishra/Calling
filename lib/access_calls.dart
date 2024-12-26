@@ -1,6 +1,5 @@
-import 'package:calling/MyHomePage.dart';
+import 'package:calling/calls.dart';
 import 'package:flutter/material.dart';
-
 
 class access_call extends StatelessWidget {
   @override
@@ -30,7 +29,7 @@ class access_call extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
+                    MaterialPageRoute(builder: (context) => Calls()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

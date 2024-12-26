@@ -10,23 +10,21 @@ class MessagesScreen extends StatefulWidget {
 }
 
 class _MessagesScreenState extends State<MessagesScreen> {
-  int _currentIndex = 0; // To track the selected tab in the bottom navigation bar
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[50],
-      appBar: AppBarPage(), // Custom AppBar
+      appBar: AppBarPage(),
       body: Column(
         children: [
           SizedBox(height: 10,),
           TabButtonsPage(),
-
           Padding(
             padding: const EdgeInsets.only(top:10, bottom: 10, left: 0, right: 260),
             child: Text('All messages'),
           ),
-
           Expanded(
             child: ListView.builder(
               itemCount: messageData.length,
@@ -44,20 +42,18 @@ class _MessagesScreenState extends State<MessagesScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBarPage( // Custom BottomNavigationBar
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+      ),
+      bottomNavigationBar: BottomNavigationBarPage(
         currentIndex: _currentIndex,
         onTabChange: (index) {
           setState(() {
-            _currentIndex = index; // Update the selected tab
+            _currentIndex = index;
           });
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Implement the action when the FAB is pressed
-        },
-        child: Icon(Icons.message),
-        backgroundColor: Colors.blue,
       ),
     );
   }
@@ -115,7 +111,6 @@ class MessageTile extends StatelessWidget {
   }
 }
 
-// Sample data
 class MessageData {
   final String phoneNumber;
   final String message;

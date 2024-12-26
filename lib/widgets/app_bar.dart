@@ -9,7 +9,6 @@ class AppBarPage extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
       backgroundColor: Colors.white,
       title: Row(
         children: [
@@ -34,7 +33,7 @@ class AppBarPage extends StatelessWidget implements PreferredSizeWidget {
                 'always be sure',
                 style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 8,
+                  fontSize: 9,
                 ),
               ),
             ],
